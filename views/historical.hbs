@@ -18,8 +18,12 @@
 </div>
 
 <div class="row container-fluid">
+  <form action="/" method="post">
+    <button class="btn btn-primary btn-lg" type="submit" formaction="/delete">Delete all records</button>
+  </form>
+  <br>
   <table class="table table-striped">
-     {{#list items}}<tr><td>{{name}}</td><td>{{address}}></td><td><img src={{photo_reference}} width="200" height="200"></td></tr>{{/list}}
+     {{#list items}}<tr><td>{{name}}</td><td>{{address}}</td><td><img src={{photo_reference}} width="200" height="200"></td></tr>{{/list}}
   </table>
 </div>
 
