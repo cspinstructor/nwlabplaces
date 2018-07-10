@@ -64,7 +64,7 @@ server.post('/getplaces', (req, res) => {
       console.log(errorMessage);
     });
 
-    //res.status(200).send(filteredResults);
+    res.status(200).send(filteredResults);
 
   }).catch((error) => {
     console.log(error);
