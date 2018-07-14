@@ -16,6 +16,14 @@ hbs.registerPartials(__dirname + '/views/partials');
 const PLACES_API_KEY = 'AIzaSyCsDrx0q_PSYYBIx3xrKT0p0G53ETRG2OQ';
 var filteredResults;
 
+
+if (process.env.NODE_ENV === 'production') {
+  server.use(express.static('client/build'));
+  server.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 hbs.registerHelper('list', (items, options) => {
   items = filteredResults;
   var out = "<tr><th>Name</th><th>Address</th><th>Photo</th></tr>";
